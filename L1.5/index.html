@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>1.5 寻找失踪的小伙伴</title>
+  <link rel="stylesheet" href="./tfjs-examples.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="tfjs-example-container centered-container">
+    <section class='title-area'>
+      <h1>寻找失踪的小伙伴</h1>
+      <p class='subtitle'>使用检测来实现追踪</p>
+    </section>
+
+    <p class='section-head'>INSTRUCTION</p>
+      <p>
+        视频是由一系列的图像组成的，将许多图像连续播放出来就形成了视频。
+      </p>
+      <p>
+        于是，对于跟踪问题，就可以使用一系列的检测来解决。对每一帧图像进行检测，这样就可以在每一帧图像中得到检测框的信息。将检测框画到每一帧的图像上，再整体进行播放，就可以看到检测的结果。其中fps代表每秒钟播放的画面数，可以设为30或60等数值。
+      </p>
+    </p>
+  <div class="container">
+    <div id="webcam-wrapper">
+      <div id="loader"></div>
+      <div id="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+      <div  style="text-align: center;">
+        <video width="640px" height="350px" autoplay playsinline muted  controls="controls" id="video" loop="-1"> 
+          <source src="./cat.mp4" type="video/mp4"></source> 
+        </video>
+      </div>
+      <div id="rects"></div>
+      <!-- <video autoplay playsinline muted id="webcam"></video> -->
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="button-group">
+      <button id="v3">YOLOv3 (236MB)</button>
+      <button id="v1tiny">Tiny YOLOv1 (60MB)</button>
+      <button id="v2tiny">Tiny YOLOv2 (43MB)</button>
+      <button id="v3tiny">Tiny YOLOv3 (34MB)</button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="dist/bundle.js"></script>
+</body>
+
+</html>
